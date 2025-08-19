@@ -15,8 +15,7 @@ Before starting, ensure you have the following installed:
    Clone this repository or download the `.zip` archive and extract it.
 
 2. **Configure environment variables:**  
-   If needed, modify the backend environment variables in `docker-compose.yml`. By default, it uses:
-   MONGO_URI: mongodb://root:example@mongo:27017
+   If needed, modify the backend environment variables in `docker-compose.yml`.
 
 ## Running the project
 
