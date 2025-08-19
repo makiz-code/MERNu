@@ -49,7 +49,7 @@ export const remove = asyncHandler(async (req, res) => {
   res.json({ ok: true, deletedId: req.params.id });
 });
 
-export const deleteAll = asyncHandler(async (_req, res) => {
+export const removeAll = asyncHandler(async (_req, res) => {
   const result = await Task.deleteMany({});
   res.json({ ok: true, deletedCount: result.deletedCount });
 });

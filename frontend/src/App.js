@@ -10,7 +10,7 @@ export default function App() {
   const [tasks, setTasks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [showDeleteAllModal, setShowDeleteAllModal] = useState(false);
+  const [showRemoveAllModal, setShowRemoveAllModal] = useState(false);
 
   const getInitialTheme = () => {
     const savedTheme = localStorage.getItem("theme");
@@ -59,10 +59,10 @@ export default function App() {
     await refresh();
   }
 
-  async function handleDeleteAll() {
-    await Tasks.deleteAll();
+  async function handleRemoveAll() {
+    await Tasks.removeAll();
     await refresh();
-    setShowDeleteAllModal(false);
+    setShowRemoveAllModal(false);
   }
 
   return (
@@ -125,7 +125,7 @@ export default function App() {
 
           <Button
             variant="danger"
-            onClick={() => setShowDeleteAllModal(true)}
+            onClick={() => setShowRemoveAllModal(true)}
             className="rounded-pill d-flex align-items-center gap-2"
           >
             <i className="bi bi-trash"></i> Delete All
@@ -144,9 +144,9 @@ export default function App() {
       </Row>
 
       <Modal
-        show={showDeleteAllModal}
-        onClose={() => setShowDeleteAllModal(false)}
-        onConfirm={handleDeleteAll}
+        show={showRemoveAllModal}
+        onClose={() => setShowRemoveAllModal(false)}
+        onConfirm={handleRemoveAll}
         title="Confirm Delete All"
         body="⚠ Are you sure you want to delete all tasks?"
         confirmText="Delete All"
