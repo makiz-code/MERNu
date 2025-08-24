@@ -22,5 +22,5 @@ Before starting, ensure you have the following installed:
 Make sure Docker Desktop is running before launching anything  
 Run the following command to create the containers: docker-compose build  
 Run the following command to launch the containers: docker-compose up -d  
-Open your default browser at URL : <http://localhost:3000>  
+Open your web browser and go to <http://localhost:3000> to access the app
 Run the following command to shut down the containers: docker-compose down
