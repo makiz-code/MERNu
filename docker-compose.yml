@@ -22,7 +22,7 @@ services:
       MONGO_URI: ${MONGO_URI}
       MONGO_DB: ${MONGO_DB}
       CORS_ORIGIN: ${CORS_ORIGIN}
-      PORT: ${PORT}
+      API_PORT: ${API_PORT}
     depends_on:
       - mongodb
 
