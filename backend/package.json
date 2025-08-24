@@ -1,5 +1,5 @@
 {
-  "name": "mernu-backend",
+  "name": "mernubs",
   "version": "1.0.0",
   "type": "module",
   "main": "src/index.js",
@@ -13,7 +13,6 @@
     "express": "^4.19.2",
     "helmet": "^7.1.0",
     "mongoose": "^8.6.3",
-    "morgan": "^1.10.0",
     "zod": "^3.23.8"
   },
   "devDependencies": {

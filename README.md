@@ -15,11 +15,12 @@ Before starting, ensure you have the following installed:
    Clone this repository or download the `.zip` archive and extract it.
 
 2. **Configure environment variables:**  
-   If needed, modify the backend environment variables in `docker-compose.yml`.
+   Create a .env file in the project folder containing all variables required by docker-compose.yml, ensuring the keys and values match the backend service configuration.
 
 ## Running the project
 
 Make sure Docker Desktop is running before launching anything  
+Run the following command to create the containers: docker-compose build  
 Run the following command to launch the containers: docker-compose up -d  
 Open your default browser at URL : <http://localhost:3000>  
 Run the following command to shut down the containers: docker-compose down

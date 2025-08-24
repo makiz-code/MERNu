@@ -1,15 +1,15 @@
 services:
   mongodb:
-    image: mongo:6
+    image: mongo:7.0
     container_name: mongodb
     restart: always
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: example
     ports:
       - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
     volumes:
-      - mongo-data:/data/db
+      - mongo_data:/data/db
 
   backend:
     build: ./backend
@@ -19,7 +19,10 @@ services:
     ports:
       - "5000:5000"
     environment:
-      MONGO_URI: mongodb://root:example@mongodb:27017
+      MONGO_URI: ${MONGO_URI}
+      MONGO_DB: ${MONGO_DB}
+      CORS_ORIGIN: ${CORS_ORIGIN}
+      PORT: ${PORT}
     depends_on:
       - mongodb
 
@@ -36,4 +39,4 @@ services:
       - backend
 
 volumes:
-  mongo-data:
+  mongo_data:
